@@ -3,7 +3,7 @@ Vince's Linux Dotfiles
 Clone the repo:
 
 ```bash
-$ git clone --recurse-submodules git@github.com:vforgione/linux-dotfiles.git $HOME/Dotfiles
+$ git clone --recurse-submodules git@github.com:vforgione/dotfiles-linux.git $HOME/Dotfiles
 ```
 
 Symlink these things:
