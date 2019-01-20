@@ -1,0 +1,23 @@
+[user]
+	name = Vince Forgione
+	email = vforgione@uchicago.edu
+	identitfyfile = ~/.ssh/id_rsa
+	signingkey = 314BF91538510D66
+
+[color]
+	ui = true
+	diff = true
+
+[alias]
+	prune = fetch --prune
+	undo = reset --soft ^HEAD
+	stash-all = stash save --include-untracked
+
+[status]
+	showUntrackedFiles = all
+
+[commit]
+	gpgsign = true
+
+[core]
+	editor = vim

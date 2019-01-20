@@ -1,0 +1,41 @@
+#!/bin/bash
+
+#
+# git check
+#
+function is_git_repo {
+  git branch > /dev/null 2>&1
+}
+
+function set_git_branch {
+  status="$(git status 2> /dev/null)"
+  if [[ "$status" =~ "working tree clean" ]]; then
+    STATE="\[\033[0;32m\]"
+  elif [[ "$status" =~ "Changes to be committed" ]]; then
+    STATE="\[\033[0;33m\]"
+  else
+    STATE="\[\033[31m\]"
+  fi
+
+  ref="$(git symbolic-ref HEAD 2> /dev/null | sed -e 's/refs\/heads\///')"
+  if [[ "$ref" != "" ]]; then
+    GIT_BRANCH=" $STATE$ref\[\033[0m\]"
+  else
+    GIT_BRANCH=""
+  fi
+}
+
+#
+# set the prompt
+#
+function set_prompt {
+  if is_git_repo; then
+    set_git_branch
+  else
+    GIT_BRANCH=""
+  fi
+
+  PS1=" \w${GIT_BRANCH} \\$ "
+}
+
+PROMPT_COMMAND=set_prompt
