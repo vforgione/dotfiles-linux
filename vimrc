@@ -36,3 +36,8 @@ au BufRead,BufNewFile *.go,Makefile set noexpandtab
 au BufRead,BufNewFile *.rst set tabstop=3
 au BufRead,BufNewFile *.rst set shiftwidth=3
 au BufRead,BufNewFile *.rst set expandtab
+
+"
+" fix tmux coloring problems
+"
+set background=dark
