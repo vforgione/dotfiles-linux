@@ -113,6 +113,7 @@ if ! shopt -oq posix; then
 fi
 
 export GOPATH=$HOME/go
+export PATH=$GOPATH/bin:$PATH
 
 . $HOME/.asdf/asdf.sh
 . $HOME/.asdf/completions/asdf.bash
